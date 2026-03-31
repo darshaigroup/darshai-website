@@ -48,7 +48,7 @@ import { fadeUp } from "../../utils/animations";
           viewport={{ once: true }}
           className="mt-8 text-lg md:text-xl text-[#5F756B] leading-relaxed"
         >
-          Your body is not a machine—it's an ecosystem. DARSHAI bridges the
+          Your body is not a machine, it's an ecosystem. DARSHAI bridges the
           ancient wisdom of Ayurveda with the precision of modern biomarker
           science, creating personalized protocols that honor both your heritage
           and your biology.
@@ -63,10 +63,10 @@ import { fadeUp } from "../../utils/animations";
           className="mt-8 text-lg md:text-xl text-[#7A8F84] leading-relaxed"
         >
           We believe in{" "}
-          <span className="text-[#6B8F78] font-medium">
+          <span className="text-[#C9B37E] font-medium">
             biological sovereignty
           </span>{" "}
-          — the right to understand, optimize, and control your own health
+           the right to understand, optimize, and control your own health
           journey through data-driven insights rooted in timeless practices.
         </motion.p>
 

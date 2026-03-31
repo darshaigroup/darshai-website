@@ -9,13 +9,13 @@ const leaders = [
   {
     name: "Miss Veekshitha V",
     role: "FOUNDER & CHIEF WELLNESS OFFICER",
-    desc: "Ayurvedic about 5000+ old integrated with AI under her guidance",
+    desc: "A Science and Journalism post-graduate and also “MCJ Silver Jubilee Year Awardee” who leads the brand's vision and strategic architecture, ensuring the bridge between clinical data and human storytelling remains unbreakable.",
     image: doctor2,
   },
   {
     name: "Dr. Renjith N Raj",
     role: "CHIEF DOCTOR",
-    desc: "Ayurvedic physician with 5+ years of clinical practice, bridging traditional medicine with modern biomarker analysis",
+    desc: "The guardian of our protocols, specializing in translating 5,000 years of Ayurvedic tradition into measurable, clinical interventions.",
     image: doctor1,
   },
 ];

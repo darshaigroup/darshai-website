@@ -3,6 +3,7 @@ import TrustStrip from "./Strip";
 import Genesis from "./Genesis";
 import Pillars from "./Pillars";
 import Dashboard from "./Dashboard";
+import MissionVision from "./MissionVision";
 import Leadership from "./Leadership";
 import Journey from "./journey";
 import Services from "./Services";
@@ -15,10 +16,11 @@ import Contact from "./Contact";
       <TrustStrip />
       <Genesis />
       <Pillars />
-      <Dashboard />
+      <MissionVision/>
       <Leadership />
       <Journey />
       <Services />
+      <Dashboard />
       <Contact />
     </>
   );

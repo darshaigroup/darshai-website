@@ -39,6 +39,9 @@ const pillars = [
           OUR FOUNDATION
         </motion.p>
 
+        {/* Divider Line */}
+        <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
+
         {/* Heading */}
         <motion.h2
           variants={fadeUp}

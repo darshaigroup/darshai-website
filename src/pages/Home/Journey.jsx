@@ -9,8 +9,8 @@ const roadmap = [
     date: "2025 Q1-Q2",
     desc: "Deep research into Ayurvedic protocols and biomarker science. Building foundational AI models.",
     icon: <Lightbulb />,
-    active: true, // ✅ ACTIVE HERE
-    color: "bg-[#C9A75B]",
+    active: true, 
+    color: "bg-[#15803d]",
   },
   {
     phase: "PHASE 2",
@@ -19,7 +19,7 @@ const roadmap = [
     desc: "Curated group of 100 participants for beta testing. Real-world validation of protocols.",
     icon: <Users />,
     active: false,
-    color: "bg-[#8FAE97]",
+     color: "bg-[#15803d]",
   },
   {
     phase: "PHASE 3",
@@ -28,13 +28,13 @@ const roadmap = [
     desc: "Enterprise wellness programs. Scaling to organizations committed to employee wellbeing.",
     icon: <Building2 />,
     active: false,
-    color: "bg-[#8FAE97]",
+     color: "bg-[#15803d]",
   },
 ];
 
  function Journey() {
   return (
-    <section className="bg-[#F5F1E8] py-24 px-6">
+    <section className="bg-[#fffdfd] py-24 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
@@ -99,7 +99,7 @@ const roadmap = [
 
                     {/* ACTIVE BADGE (ONLY PHASE 1) */}
                     {item.active && (
-                      <span className="bg-[#8FAE97] text-white px-4 py-1 rounded-full text-sm">
+                      <span className="bg-[#15803d] text-white px-4 py-1 rounded-full text-sm">
                         Active
                       </span>
                     )}

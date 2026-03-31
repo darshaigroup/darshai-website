@@ -61,7 +61,7 @@ const steps = [
                 <div className="text-center">
 
                   {/* Circle Number */}
-                  <div className="w-14 h-14 rounded-full bg-[#8FAE97] text-white flex items-center justify-center text-lg font-medium mx-auto mb-4">
+                  <div className="w-14 h-14 rounded-full bg-[#15803d] text-white flex items-center justify-center text-lg font-medium mx-auto mb-4">
                     {step.number}
                   </div>
 
@@ -78,7 +78,7 @@ const steps = [
 
                 {/* Arrow (except last item) */}
                 {index !== steps.length - 1 && (
-    <div className="hidden md:block absolute right-[-35px] top-7 transform -translate-y-1/2 text-[#B7C5BC] text-xl">
+    <div className="hidden md:block absolute right-[-35px] top-7 transform -translate-y-1/2 text-[#15803d] text-xl">
       →
     </div>
   )}
