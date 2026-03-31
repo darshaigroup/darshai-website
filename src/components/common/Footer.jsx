@@ -1,0 +1,116 @@
+import { motion } from "framer-motion";
+import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+
+const Footer = () => {
+  return (
+    <footer className="bg-[#2a8841] text-white px-6 md:px-20 py-16 relative overflow-hidden">
+
+      {/* 🌿 Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#6F8F7D]/30 to-transparent pointer-events-none"></div>
+
+      <div className="grid md:grid-cols-3 gap-10 relative z-10">
+
+        {/* 🔹 Brand */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl font-serif tracking-wide mb-4">
+            DARSHAI
+          </h2>
+
+          <p className="text-sm text-white/80 leading-relaxed">
+            AI-Native Longevity Protocols, <br />
+            Rooted in Heritage
+          </p>
+        </motion.div>
+
+        {/* 🔹 Navigation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="text-sm tracking-widest mb-4">NAVIGATE</h3>
+
+          <ul className="space-y-3">
+            {["Home", "About", "Services", "Contact"].map((item, i) => (
+              <li key={i}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="relative inline-block text-white/90 hover:text-white transition"
+                >
+                  {item}
+
+                  {/* underline animation */}
+                  <span className="absolute left-0 -bottom-1 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* 🔹 Social + Contact */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h3 className="text-sm tracking-widest mb-4">CONNECT</h3>
+
+          <p className="text-white/80 mb-4">hello@darshai.com</p>
+
+          {/* 🌐 Social Icons */}
+          <div className="flex gap-4 mt-4">
+
+            {/* LinkedIn */}
+            <motion.a
+              whileHover={{ scale: 1.2, y: -3 }}
+              href="#"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaLinkedinIn />
+            </motion.a>
+
+            {/* Instagram */}
+            <motion.a
+              whileHover={{ scale: 1.2, y: -3 }}
+              href="#"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaInstagram />
+            </motion.a>
+
+            {/* Facebook */}
+            <motion.a
+              whileHover={{ scale: 1.2, y: -3 }}
+              href="#"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaFacebookF />
+            </motion.a>
+
+          </div>
+        </motion.div>
+      </div>
+
+      {/* 🔻 Bottom Section */}
+      <div className="mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/70 relative z-10">
+
+        <p>© 2026 DARSHAI. All rights reserved.</p>
+
+        <motion.p
+          whileHover={{ scale: 1.05 }}
+          className="flex items-center gap-2 mt-4 md:mt-0"
+        >
+          Crafted with 
+          <span className="text-yellow-300 animate-pulse">💛</span> 
+          for your wellbeing
+        </motion.p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
