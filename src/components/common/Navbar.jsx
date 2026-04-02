@@ -36,7 +36,7 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Darshai Logo"
-            className="w-[50px] sm:w-[px] md:w-[40px] lg:w-[48px] 
+            className="w-[100px] sm:w-[px] md:w-[150px] lg:w-[150px] 
                h-auto object-contain transition-all duration-300"
           />
         </div>

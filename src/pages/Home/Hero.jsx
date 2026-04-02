@@ -4,7 +4,13 @@ import analysis from "../../assets/images/analysis.png";
 import meter from "../../assets/images/meter.png";
 import heartRate from "../../assets/images/heartRate.png";
 
-
+const keywords = [
+  "Longevity",
+  "Ayurveda",
+  "AI Intelligence",
+  "Bio-Optimization",
+  "Balance",
+];
 
 
 function Hero() {
@@ -28,7 +34,7 @@ function Hero() {
             <span className="text-[#15803d]"> Validated by Heritage</span>
           </h1>
 
-          <p className="mt-4 text-lg text-[#6B7F73]">
+          <p className="mt-4 text-lg font-medium text-[#070908]">
             Reclaim biological sovereignty through Ayurveda and biomarker science.
           </p>
 
@@ -80,14 +86,15 @@ function Hero() {
             className="absolute w-[340px] h-[340px] md:w-[420px] md:h-[420px] 
                        rounded-full border border-dashed border-[#C9A75B]/20"
           />
-
+         
           {/* 🟢 MAIN IMAGE */}
           <motion.div
             animate={{ scale: [1, 1.04, 1] }}
             transition={{ duration: 6, repeat: Infinity }}
             className="w-[280px] h-[280px] md:w-[360px] md:h-[360px] 
-                       rounded-full overflow-hidden relative z-10"
+                       rounded-full overflow-hidden relative z-10 border-2 border-[#0fc552]"
           >
+            <div className="absolute inset-0 rounded-full " />
             <img
               src={heroImg}
               alt="hero"
@@ -95,11 +102,56 @@ function Hero() {
                          brightness-105 contrast-105"
             />
           </motion.div>
+            {/* ✨ FLOATING WORDS — RADIAL EMERGE */}
+{keywords.map((word, i) => {
+  const angle = (i / keywords.length) * Math.PI * 4; // full circle
+
+  const radiusX = Math.cos(angle) * 40;
+  const radiusY = Math.sin(angle) * 40;
+
+  return (
+    <motion.span
+  key={i}
+  initial={{
+    opacity: 0,
+    scale: 0.2,
+    x: radiusX,
+    y: radiusY,
+  }}
+  animate={{
+    opacity: [0, 0, 1, 1, 0], // 👈 stays invisible first, then appears
+    scale: [0.2, 0.4, 1, 1.4, 1.6],
+    x: [radiusX, radiusX * 1.5, radiusX * 2.5, radiusX * 3.2],
+    y: [radiusY, radiusY * 1.5, radiusY * 2.5, radiusY * 3.2],
+  }}
+  transition={{
+    duration: 6,
+    delay: i * 1,
+    repeat: Infinity,
+    ease: "easeOut",
+  }}
+  className="absolute z-20 font-serif 
+             text-[#2A4A3A]/80 tracking-wide 
+             pointer-events-none
+             drop-shadow-[0_0_12px_rgba(21,128,61,0.25)]"
+  style={{
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+    fontSize: "clamp(12px, 1.2vw, 22px)",
+  }}
+>
+  {word}
+</motion.span>
+  );
+})}
 
           {/* 🌫 EDGE GLOW */}
           <div className="absolute w-[300px] h-[300px] md:w-[380px] md:h-[380px] 
                           rounded-full pointer-events-none
                           shadow-[0_0_120px_40px_rgba(143,174,151,0.15)]" />
+
+                          
 
           {/* 🔵 LEFT FLOAT */}
           {/* <motion.div
@@ -155,6 +207,7 @@ function Hero() {
               </div>
             </div>
           </motion.div> */}
+   
 
           {/* 🌿 FLOATING PARTICLES */}
           <motion.div

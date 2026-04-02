@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { Lock, Zap, Sparkles } from "lucide-react";
 
 const items = [
-  { icon: <Lock size={18} />, text: "Stealth Phase" },
-  { icon: <Zap size={18} />, text: "Pilot Launch June 2026" },
-  { icon: <Sparkles size={18} />, text: "Limited Access — Quick Enrollment" },
+  { icon: <Lock size={20} />, text: "Stealth Phase" },
+  { icon: <Zap size={20} />, text: "Pilot Launch June 2026" },
+  { icon: <Sparkles size={20} />, text: "Limited Access — Quick Enrollment" },
 ];
 
 function Strip() {
@@ -13,17 +13,17 @@ function Strip() {
 
   return (
     <div
-      className="overflow-hidden border-y bg-[#F1ECE2] py-4"
+      className="overflow-hidden border-y bg-[#f5e9cc] py-10"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       <motion.div
-        className="flex gap-16 whitespace-nowrap"
+        className="flex gap-20 whitespace-nowrap"
         key={paused ? "paused" : "running"} // 🔥 forces reset
         initial={{ x: "100%" }}
         animate={{ x: paused ? "0%" : "-100%" }}
         transition={{
-          duration: 20,
+          duration: 30,
           ease: "linear",
           repeat: paused ? 0 : Infinity,
           repeatType: "loop",
@@ -31,9 +31,9 @@ function Strip() {
         }}
       >
         {items.map((item, i) => (
-          <div key={i} className="flex items-center gap-2 text-[#6B7F73]">
+          <div key={i} className="flex items-center gap-2 text-[#000000]">
             {item.icon}
-            <span>{item.text}</span>
+            <span className="text-lg font-medium">{item.text}</span>
           </div>
         ))}
       </motion.div>

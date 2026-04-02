@@ -25,7 +25,7 @@ const pillars = [
 
  function Pillars() {
   return (
-    <section className="bg-[#F5F1E8] py-24 px-6 text-center">
+    <section className="bg-[#fcfcfc] py-24 px-6 text-center">
       <div className="max-w-7xl mx-auto">
 
         {/* Top Label */}
@@ -80,7 +80,7 @@ const pillars = [
               </h3>
 
               {/* Description */}
-              <p className="text-[#5F756B] leading-relaxed">
+              <p className="text-[#55685d] text-lg leading-relaxed">
                 {item.desc}
               </p>
 

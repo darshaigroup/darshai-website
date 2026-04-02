@@ -26,7 +26,7 @@ const steps = [
 
  function Services() {
   return (
-    <section  id="services" className="bg-[#F5F1E8] py-20 px-6">
+    <section  id="services" className="bg-[#F5F1E8] py-5 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Container Card */}

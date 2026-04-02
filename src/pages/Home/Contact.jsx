@@ -1,209 +1,125 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+import { fadeUp } from "../../utils/animations";
+
+const cards = [
+  {
+    type: "phone",
+    title: "LET'S TALK",
+    icon: FaPhoneAlt,
+    value: "+91 7349171511",
+  },
+  {
+    type: "address",
+    title: "VISIT OUR OFFICE",
+    icon: FaMapMarkerAlt,
+    value:
+      "3rd Floor, Plama Center, Bejai-Kapikad Rd, Mangaluru, Karnataka",
+  },
+  {
+    type: "email",
+    title: "E-MAIL US",
+    icon: FaEnvelope,
+    value: "info@darshai.com",
+    link: "mailto:info@darshai.com",
+  },
+];
 
 function Contact() {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        interest: "",
-        message: "",
-    });
+  return (
+    <section id="contact" className="bg-[#f5f4f2] py-24 px-6 text-center">
+      <div className="max-w-5xl mx-auto">
 
-    const [errors, setErrors] = useState({});
-    const [success, setSuccess] = useState(false);
+        {/* LABEL */}
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="tracking-[0.3em] text-sm text-[#7A8F84] mb-4"
+        >
+          CONTACT
+        </motion.p>
 
-    /* ================= VALIDATION ================= */
-    const validate = () => {
-        let newErrors = {};
+        {/* DIVIDER */}
+        <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
 
-        // Name validation
-        if (!form.name.trim()) {
-            newErrors.name = "Name is required";
-        }
+        {/* HEADING */}
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="font-serif text-4xl md:text-5xl text-[#2A4A3A]"
+        >
+          Get in{" "}
+          <span className="relative inline-block">
+            Touch
+            <span className="absolute left-0 bottom-1 w-full h-2 bg-[#E7DFC8] -z-10"></span>
+          </span>
+        </motion.h2>
+      </div>
 
-        // Email validation
-        if (!form.email.trim()) {
-            newErrors.email = "Email is required";
-        } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
-            newErrors.email = "Invalid email format";
-        }
+      {/* CARDS SECTION */}
+      <div className="mt-16 max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
 
-        // Dropdown validation
-        if (!form.interest) {
-            newErrors.interest = "Please select an option";
-        }
+        {cards.map((card, index) => (
+          <motion.div
+            key={card.type}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2 }}
+            className="group relative rounded-3xl p-8 text-center cursor-pointer
+            bg-white/80 backdrop-blur-md
+            border border-[#E8E3D9]
+            shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+            transition-all duration-500 ease-in-out
+            hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(21,128,61,0.15)]"
+          >
 
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
+            {/* SOFT GLOW EFFECT */}
+            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 
+                            bg-gradient-to-br from-[#15803d]/5 via-transparent to-[#C9A75B]/10" />
 
-    /* ================= HANDLE CHANGE ================= */
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-
-        // XSS SAFE (basic sanitization)
-        const safeValue = value.replace(/</g, "").replace(/>/g, "");
-
-        setForm({ ...form, [name]: safeValue });
-    };
-
-    /* ================= SUBMIT ================= */
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (!validate()) return;
-
-        // simulate API
-        setTimeout(() => {
-            setSuccess(true);
-            setForm({
-                name: "",
-                email: "",
-                interest: "",
-                message: "",
-            });
-        }, 500);
-    };
-
-    return (
-        <section id="contact"className="bg-[#F5F1E8] py-20 px-6">
-            <div className="max-w-5xl mx-auto bg-[#F1ECE2] p-10 rounded-3xl border border-[#E0D8C5]">
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-
-                    {/* Row */}
-                    <div className="grid md:grid-cols-2 gap-6">
-
-                        {/* Name */}
-                        <div>
-                            <label className="block text-[#2A4A3A] mb-2">
-                                Full Name *
-                            </label>
-                            <input
-                                type="text"
-                                name="name"
-                                value={form.name}
-                                onChange={handleChange}
-                                placeholder="Enter your name"
-                                className="w-full p-4 rounded-xl bg-white outline-none"
-                            />
-                            {errors.name && (
-                                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-                            )}
-                        </div>
-
-                        {/* Email */}
-                        <div>
-                            <label className="block text-[#2A4A3A] mb-2">
-                                Email Address *
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={form.email}
-                                onChange={handleChange}
-                                placeholder="your@email.com"
-                                className="w-full p-4 rounded-xl bg-white outline-none"
-                            />
-                            {errors.email && (
-                                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                            )}
-                        </div>
-
-                    </div>
-
-                    {/* Dropdown */}
-                    <div>
-                        <label className="block text-[#2A4A3A] mb-2">
-                            I'm interested in *
-                        </label>
-                        <select
-                            name="interest"
-                            value={form.interest}
-                            onChange={handleChange}
-                            className="w-full p-4 rounded-xl bg-white outline-none"
-                        >
-                            <option value="">Select an option</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                        </select>
-
-                        {errors.interest && (
-                            <p className="text-red-500 text-sm mt-1">
-                                {errors.interest}
-                            </p>
-                        )}
-                    </div>
-
-                    {/* Textarea (optional) */}
-                    <div>
-                        <label className="block text-[#2A4A3A] mb-2">
-                            Tell us about your wellness goals
-                        </label>
-                        <textarea
-                            name="message"
-                            value={form.message}
-                            onChange={handleChange}
-                            rows="4"
-                            placeholder="Share your current health challenges..."
-                            className="w-full p-4 rounded-xl bg-white outline-none"
-                        />
-                    </div>
-
-                    {/* Button */}
-                    <button
-                        type="submit"
-                        className="bg-[#2b8542] text-white px-8 py-4 rounded-full shadow-md hover:scale-105 transition"
-                    >
-                        Submit Application
-                    </button>
-
-                    <p className="text-sm text-[#7A8F84] mt-4">
-                        By submitting this form, you agree to be contacted by DARSHAI.
-                    </p>
-                </form>
-
-                {/* ================= SUCCESS POPUP ================= */}
-                <AnimatePresence>
-                    {success && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 flex items-center justify-center bg-black/40 z-50"
-                        >
-                            <motion.div
-                                initial={{ y: 50 }}
-                                animate={{ y: 0 }}
-                                exit={{ y: 50 }}
-                                className="bg-white p-10 rounded-3xl text-center max-w-md relative overflow-hidden z-10"
-                            >
-
-                                {/* FIXED: overlay won't block clicks */}
-                                <div className="absolute inset-0 bg-gradient-radial from-[#8FAE97]/40 to-transparent animate-pulse pointer-events-none"></div>
-
-                                <h3 className="text-2xl font-serif text-[#2A4A3A] mb-4">
-                                    🌿 Thank You
-                                </h3>
-
-                                <p className="text-[#23be78]">
-                                    Your journey toward biological sovereignty has begun.
-                                </p>
-
-                                <button
-                                    onClick={() => setSuccess(false)}
-                                    className="mt-6 px-6 py-2 bg-[#2A4A3A] text-white rounded-full relative z-20"
-                                >
-                                    Close
-                                </button>
-                            </motion.div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-
+            {/* ICON */}
+            <div
+              className="relative z-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 
+              bg-[#F5F1E8] text-[#15803d]
+              transition-all duration-300 
+              group-hover:bg-[#15803d] group-hover:text-white"
+            >
+              <card.icon className="text-2xl" />
             </div>
-        </section>
-    );
+
+            {/* TITLE */}
+            <h3 className="relative z-10 text-lg font-semibold text-[#2A4A3A] mb-3 tracking-wide">
+              {card.title}
+            </h3>
+
+            {/* VALUE */}
+            <p className="relative z-10 text-sm text-[#5F756B] leading-relaxed">
+              {card.type === "email" ? (
+                <a
+                  href={card.link}
+                  className="hover:text-[#15803d] transition"
+                >
+                  {card.value}
+                </a>
+              ) : (
+                card.value
+              )}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Contact;

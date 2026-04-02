@@ -6,7 +6,7 @@ const roadmap = [
   {
     phase: "PHASE 1",
     title: "Concept & Research",
-    date: "2025 Q1-Q2",
+    date: "March 2026",
     desc: "Deep research into Ayurvedic protocols and biomarker science. Building foundational AI models.",
     icon: <Lightbulb />,
     active: true, 
@@ -15,16 +15,16 @@ const roadmap = [
   {
     phase: "PHASE 2",
     title: "Pilot Launch",
-    date: "2026 Q2",
-    desc: "Curated group of 100 participants for beta testing. Real-world validation of protocols.",
+    date: "June 2026 ",
+    desc: "Curated group of 25 participants for beta testing. Real-world validation of protocols.",
     icon: <Users />,
     active: false,
      color: "bg-[#15803d]",
   },
   {
     phase: "PHASE 3",
-    title: "Corporate Expansion",
-    date: "2026 Q4",
+    title: "Prelaunch",
+    date: "2026 ",
     desc: "Enterprise wellness programs. Scaling to organizations committed to employee wellbeing.",
     icon: <Building2 />,
     active: false,
@@ -46,6 +46,9 @@ const roadmap = [
         >
           JOURNEY
         </motion.p>
+        {/* Divider Line */}
+        <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
+
 
         <motion.h2
           variants={fadeUp}

@@ -2,25 +2,10 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../utils/animations";
 
 // images
-import doctor1 from "../../assets/images/doctor.jpg";
-import doctor2 from "../../assets/images/doctor1.png";
+import ceo from "../../assets/images/ceo.png";
 
-const leaders = [
-  {
-    name: "Miss Veekshitha V",
-    role: "FOUNDER & CHIEF WELLNESS OFFICER",
-    desc: "A Science and Journalism post-graduate and also “MCJ Silver Jubilee Year Awardee” who leads the brand's vision and strategic architecture, ensuring the bridge between clinical data and human storytelling remains unbreakable.",
-    image: doctor2,
-  },
-  {
-    name: "Dr. Renjith N Raj",
-    role: "CHIEF DOCTOR",
-    desc: "The guardian of our protocols, specializing in translating 5,000 years of Ayurvedic tradition into measurable, clinical interventions.",
-    image: doctor1,
-  },
-];
 
- function Leadership() {
+function Leadership() {
   return (
     <section className="bg-[#F5F1E8] py-24 px-6">
       <div className="max-w-6xl mx-auto text-center">
@@ -34,6 +19,9 @@ const leaders = [
         >
           LEADERSHIP
         </motion.p>
+        
+        {/* Divider Line */}
+        <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
 
         <motion.h2
           variants={fadeUp}
@@ -44,7 +32,8 @@ const leaders = [
           Guided by Vision
         </motion.h2>
 
-        {/* Quote Card */}
+
+        {/* Quote */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -56,61 +45,67 @@ const leaders = [
           </p>
         </motion.div>
 
-        {/* Leadership Cards */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          className="grid md:grid-cols-2 gap-10"
-        >
-          {leaders.map((person, index) => (
-            <motion.div key={index} variants={fadeUp}>
-              <LeaderCard person={person} />
-            </motion.div>
-          ))}
-        </motion.div>
+      </div>
+   
+  
+    <div className="flex flex-col items-center text-center group cursor-pointer relative">
+
+     {/* 🧑 IMAGE + PREMIUM CIRCLE */}
+<div className="relative w-[200px] h-[200px] flex items-center justify-center group">
+
+  {/* 🎨 BACKGROUND CIRCLE */}
+  <div
+    className="absolute inset-0 rounded-full bg-[#15803d]
+               transition duration-500 group-hover:scale-105"
+  />
+
+  {/* ✨ SOFT GLOW */}
+  <div
+    className="absolute inset-0 rounded-full bg-[#15803d]/20 blur-2xl"
+  />
+
+  {/* 🧑 IMAGE (PERFECT FIT FIX) */}
+  <img
+    src={ceo}
+    alt="veekshitha"
+    loading="lazy"
+    className="
+      relative z-10
+      w-[200px] h-[200px]
+      object-cover
+      rounded-full
+
+      /* 🔥 KEY FIX */
+      object-[center_top]
+
+      /* PREMIUM */
+      transition duration-500
+      group-hover:scale-105
+    "
+  />
+
+</div>
+
+      {/* 🟢 CONTENT */}
+      <div className="mt-12 max-w-xs">
+
+        <h3 className="text-xl font-serif text-[#2A4A3A]">
+          Veekshitha V
+        </h3>
+
+        <p className="text-sm text-[#C9A75B] tracking-wide mt-1">
+          Founder & CEO
+        </p>
+
+        <p className="text-[#5F756B] mt-3 leading-relaxed">
+         " A Science and Journalism post-graduate and MCJ Silver Jubilee Year Awardee, 
+          leading Darshai’s vision and strategic architecture while bridging clinical 
+          data with human storytelling ".
+        </p>
 
       </div>
-    </section>
-  );
-}
-
-/* ================= COMPONENT ================= */
-
-function LeaderCard({ person }) {
-  return (
-    <div className="text-left group cursor-pointer">
-
-      {/* Image Wrapper */}
-      <div className="relative overflow-hidden rounded-2xl">
-
-        {/* Image */}
-        <img
-          src={person.image}
-          alt={person.name}
-          loading="lazy"
-          className="w-full h-[320px] object-cover transition duration-500 group-hover:scale-105"
-        />
-
-        {/* GREEN RADIAL OVERLAY (KEY EFFECT) */}
-       {/* NEW HOVER OVERLAY */}
-<div className="absolute inset-0 bg-gradient-to-t from-[#2A4A3A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-      </div>
-
-      {/* Content */}
-      <h3 className="mt-6 text-xl font-serif text-[#2A4A3A]">
-        {person.name}
-      </h3>
-
-      <p className="text-sm text-[#C9A75B] tracking-wide mt-1">
-        {person.role}
-      </p>
-
-      <p className="text-[#5F756B] mt-3 leading-relaxed">
-        {person.desc}
-      </p>
     </div>
+     </section>
   );
 }
 

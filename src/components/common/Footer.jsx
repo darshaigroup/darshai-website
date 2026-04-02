@@ -59,7 +59,8 @@ const Footer = () => {
         >
           <h3 className="text-sm tracking-widest mb-4">CONNECT</h3>
 
-          <p className="text-white/80 mb-4">hello@darshai.com</p>
+          <p className="text-white/80 mb-4">info@darshaigroup.com</p>
+          <p className="text-white/80 mb-4">+91-7349171511</p>
 
           {/* 🌐 Social Icons */}
           <div className="flex gap-4 mt-4">
@@ -67,7 +68,7 @@ const Footer = () => {
             {/* LinkedIn */}
             <motion.a
               whileHover={{ scale: 1.2, y: -3 }}
-              href="#"
+              href="https://www.linkedin.com/company/darshai/"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
               <FaLinkedinIn />
@@ -76,7 +77,7 @@ const Footer = () => {
             {/* Instagram */}
             <motion.a
               whileHover={{ scale: 1.2, y: -3 }}
-              href="#"
+              href="https://www.instagram.com/darshaiofficial?igsh=a3dwZnQwY3R1ejU2"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
               <FaInstagram />
@@ -85,7 +86,7 @@ const Footer = () => {
             {/* Facebook */}
             <motion.a
               whileHover={{ scale: 1.2, y: -3 }}
-              href="#"
+              href="https://www.facebook.com/share/1AoFJHjYes/"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
               <FaFacebookF />
@@ -93,21 +94,6 @@ const Footer = () => {
 
           </div>
         </motion.div>
-      </div>
-
-      {/* 🔻 Bottom Section */}
-      <div className="mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/70 relative z-10">
-
-        <p>© 2026 DARSHAI. All rights reserved.</p>
-
-        <motion.p
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 mt-4 md:mt-0"
-        >
-          Crafted with 
-          <span className="text-yellow-300 animate-pulse">💛</span> 
-          for your wellbeing
-        </motion.p>
       </div>
     </footer>
   );

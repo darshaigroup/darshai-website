@@ -7,9 +7,9 @@ import { fadeUp } from "../../utils/animations";
   return (
     <section
       id="about"
-      className="bg-[#F5F1E8] py-24 px-6 text-center"
+      className="bg-[#F5F1E8] py-40 px-6 text-center"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
 
         {/* Small Label */}
         <motion.p
@@ -41,35 +41,33 @@ import { fadeUp } from "../../utils/animations";
         </motion.h2>
 
         {/* Paragraph 1 */}
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-8 text-lg md:text-xl text-[#5F756B] leading-relaxed"
-        >
-          Your body is not a machine, it's an ecosystem. DARSHAI bridges the
-          ancient wisdom of Ayurveda with the precision of modern biomarker
-          science, creating personalized protocols that honor both your heritage
-          and your biology.
-        </motion.p>
+<motion.p
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="mt-8 mb-8 text-lg md:text-xl text-[#55685d] leading-relaxed"
+>
+  Master your health journey with DARSHAI. We seamlessly integrate the
+  5,000-year-old wisdom of Ayurveda with the precision of modern biomarker
+  science, delivering personalized protocols engineered for your unique biology.
+</motion.p>
 
-        {/* Paragraph 2 */}
-        <motion.p
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mt-8 text-lg md:text-xl text-[#7A8F84] leading-relaxed"
-        >
-          We believe in{" "}
-          <span className="text-[#C9B37E] font-medium">
-            biological sovereignty
-          </span>{" "}
-           the right to understand, optimize, and control your own health
-          journey through data-driven insights rooted in timeless practices.
-        </motion.p>
-
+{/* Paragraph 2 */}
+<motion.p
+  variants={fadeUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="mt-8  text-lg md:text-xl text-[#55685d] leading-relaxed"
+>
+  Reclaim your{" "}
+  <span className="text-[#e9ca81] font-medium">
+    Biological Sovereignty
+  </span>
+  . Move beyond guesswork with data-driven insights rooted in heritage heritage, 
+  designed to help you understand, optimize, and control your vitality.
+</motion.p>
       </div>
     </section>
   );
