@@ -142,7 +142,7 @@ function Services() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-[#F5F1E8] py-16 px-6">
+    <section id="services" className="bg-[#F5F1E8] py-16 px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* 🔹 Heading */}
@@ -150,7 +150,8 @@ function Services() {
           <p className="text-xs tracking-[0.3em] text-[#7A8F84] uppercase mb-2">
             SERVICES
           </p>
-
+ {/* Divider */}
+        <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
           <h2 className="font-heading text-4xl md:text-5xl text-[#2A4A3A] mb-4">
             The Six Gears of Precision Wellness
           </h2>

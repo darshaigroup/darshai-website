@@ -1,15 +1,24 @@
-import React from 'react'
-
+import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../../utils/animations";
 
- function Genesis() {
+
+function Genesis() {
   return (
     <section
       id="about"
-      className="bg-[#F5F1E8] py-40 px-6 text-center"
+      className="relative py-40 px-6 text-center overflow-hidden bg-[#F5F1E8]"
     >
-      <div className="max-w-3xl mx-auto">
+      
+
+      {/* ✨ SOFT GRADIENT DEPTH */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1E8] via-[#F5F1E8]/90 to-[#e2d7bd]" />
+
+      {/* 🌟 CENTER GLOW (Luxury Feel) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(201,179,126,0.12),transparent_60%)]" />
+
+      {/* 🔹 CONTENT */}
+      <div className="relative z-10 max-w-3xl mx-auto">
 
         {/* Small Label */}
         <motion.p
@@ -22,10 +31,10 @@ import { fadeUp } from "../../utils/animations";
           GENESIS
         </motion.p>
 
-        {/* Divider Line */}
+        {/* Divider */}
         <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
 
-        {/* Main Heading */}
+        {/* Heading */}
         <motion.h2
           variants={fadeUp}
           initial="hidden"
@@ -41,33 +50,33 @@ import { fadeUp } from "../../utils/animations";
         </motion.h2>
 
         {/* Paragraph 1 */}
-<motion.p
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="mt-8 mb-8 text-lg md:text-xl text-[#55685d] leading-relaxed"
->
-  Master your health journey with DARSHAI. We seamlessly integrate the
-  5,000-year-old wisdom of Ayurveda with the precision of modern biomarker
-  science, delivering personalized protocols engineered for your unique biology.
-</motion.p>
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-8 mb-8 text-lg md:text-xl text-[#55685d] leading-relaxed"
+        >
+          Master your health journey with DARSHAI. We seamlessly integrate the
+          5,000-year-old wisdom of Ayurveda with the precision of modern biomarker
+          science, delivering personalized protocols engineered for your unique biology.
+        </motion.p>
 
-{/* Paragraph 2 */}
-<motion.p
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="mt-8  text-lg md:text-xl text-[#55685d] leading-relaxed"
->
-  Reclaim your{" "}
-  <span className="text-[#e9ca81] font-medium">
-    Biological Sovereignty
-  </span>
-  . Move beyond guesswork with data-driven insights rooted in heritage heritage, 
-  designed to help you understand, optimize, and control your vitality.
-</motion.p>
+        {/* Paragraph 2 */}
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-8 text-lg md:text-xl text-[#55685d] leading-relaxed"
+        >
+          Reclaim your{" "}
+          <span className="text-[#e2ae35] font-medium">
+            Biological Sovereignty
+          </span>
+          . Move beyond guesswork with data-driven insights rooted in heritage,
+          designed to help you understand, optimize, and control your vitality.
+        </motion.p>
       </div>
     </section>
   );
