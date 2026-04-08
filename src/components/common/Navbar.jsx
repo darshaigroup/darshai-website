@@ -83,7 +83,7 @@ export default function Navbar() {
             className="fixed top-0 right-0 w-full h-screen bg-white z-50 flex flex-col p-6"
           >
             {/* ❌ CLOSE BUTTON */}
-            <div className="flex justify-end">
+            <div className="flex px-10 justify-end">
               <button onClick={() => setMenuOpen(false)}>
                 <FaTimes size={24} />
               </button>

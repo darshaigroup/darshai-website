@@ -23,7 +23,7 @@ const roadmap = [
   },
   {
     phase: "PHASE 3",
-    title: "Prelaunch",
+    title: "Pre-Launch",
     date: "2026 ",
     desc: "Enterprise wellness programs. Scaling to organizations committed to employee wellbeing.",
     icon: <Building2 />,
@@ -96,7 +96,7 @@ const roadmap = [
                 >
                   {/* Top Row */}
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm text-[#8FAE97] tracking-wide">
+                    <span className="text-sm text-[#181b19] tracking-wide">
                       {item.phase}
                     </span>
 
@@ -109,15 +109,15 @@ const roadmap = [
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif text-2xl text-[#2A4A3A] mb-2">
+                  <h3 className="font-serif text-3xl  text-[#010202]  mb-2">
                     {item.title}
                   </h3>
 
                   {/* Date */}
-                  <p className="text-[#7A8F84] mb-4">{item.date}</p>
+                  <p className="font-normal text-[#000000] text-semibold mb-4">{item.date}</p>
 
                   {/* Description */}
-                  <p className="text-[#5F756B] leading-relaxed">
+                  <p className="font-normal text-[#020202]  text-semibold leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

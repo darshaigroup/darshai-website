@@ -13,7 +13,7 @@ function Strip() {
 
   return (
     <div
-      className="overflow-hidden border-y bg-[#f5e9cc] py-10"
+      className="overflow-hidden border-y bg-[#15803d] py-5"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -23,7 +23,7 @@ function Strip() {
         initial={{ x: "100%" }}
         animate={{ x: paused ? "0%" : "-100%" }}
         transition={{
-          duration: 30,
+          duration: 20,
           ease: "linear",
           repeat: paused ? 0 : Infinity,
           repeatType: "loop",
@@ -31,9 +31,9 @@ function Strip() {
         }}
       >
         {items.map((item, i) => (
-          <div key={i} className="flex items-center gap-2 text-[#000000]">
+          <div key={i} className="flex items-center gap-2 text-[#fcfafa]">
             {item.icon}
-            <span className="text-lg font-medium">{item.text}</span>
+            <span className="text-xl font-medium font-serif">{item.text}</span>
           </div>
         ))}
       </motion.div>
