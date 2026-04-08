@@ -5,7 +5,7 @@ import Pillars from "./Pillars";
 // import Dashboard from "./Dashboard";
 // import MissionVision from "./MissionVision";
 import Leadership from "./Leadership";
-import Journey from "./journey";
+import Journey from "./Journey";
 import Services from "./Services";
 import Contact from "./Contact";
 
