@@ -7,9 +7,11 @@ import heartRate from "../../assets/images/heartRate.png";
 const keywords = [
   "Longevity",
   "Ayurveda",
-  "AI Intelligence",
-  "Bio-Optimization",
   "Balance",
+  "Sovereignty",
+  "Biomarkers",
+  "Ecology",
+  "Geo-Wellness",
 ];
 
 
@@ -25,7 +27,7 @@ function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center px-6 bg-[#F5F1E8]">
-      <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto items-center">
+      <div className="grid md:grid-cols-2 mt-10 gap-30 max-w-7xl mx-auto items-center">
 
         {/* 🔹 LEFT CONTENT */}
         <div>
@@ -38,7 +40,7 @@ function Hero() {
             Reclaim biological sovereignty through Ayurveda and biomarker science.
           </p>
 
-          <div className="mt-6 flex gap-4">
+          <div className="mt-6 mb-9 flex gap-4">
             <button
               onClick={scrollToContact}
               className="bg-[#15803d] text-white px-6 py-3 rounded-full 
@@ -75,7 +77,7 @@ function Hero() {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-            className="absolute w-[380px] h-[380px] md:w-[460px] md:h-[460px] 
+            className="absolute w-[380px] h-[380px] md:w-[500px] md:h-[500px] 
                        rounded-full border border-[#8FAE97]/20"
           />
 
@@ -86,7 +88,7 @@ function Hero() {
             className="absolute w-[340px] h-[340px] md:w-[420px] md:h-[420px] 
                        rounded-full border border-dashed border-[#C9A75B]/20"
           />
-         
+
           {/* 🟢 MAIN IMAGE */}
           <motion.div
             animate={{ scale: [1, 1.04, 1] }}
@@ -102,56 +104,56 @@ function Hero() {
                          brightness-105 contrast-105"
             />
           </motion.div>
-            {/* ✨ FLOATING WORDS — RADIAL EMERGE */}
-{keywords.map((word, i) => {
-  const angle = (i / keywords.length) * Math.PI * 4; // full circle
+          {/* ✨ FLOATING WORDS — RADIAL EMERGE */}
+          {keywords.map((word, i) => {
+            const angle = (i / keywords.length) * Math.PI * 4; // full circle
 
-  const radiusX = Math.cos(angle) * 40;
-  const radiusY = Math.sin(angle) * 40;
+            const radiusX = Math.cos(angle) * 40;
+            const radiusY = Math.sin(angle) * 40;
 
-  return (
-    <motion.span
-  key={i}
-  initial={{
-    opacity: 0,
-    scale: 0.2,
-    x: radiusX,
-    y: radiusY,
-  }}
-  animate={{
-    opacity: [0, 0, 1, 1, 0], // 👈 stays invisible first, then appears
-    scale: [0.2, 0.4, 1, 1.4, 1.6],
-    x: [radiusX, radiusX * 1.5, radiusX * 2.5, radiusX * 3.2],
-    y: [radiusY, radiusY * 1.5, radiusY * 2.5, radiusY * 3.2],
-  }}
-  transition={{
-    duration: 6,
-    delay: i * 1,
-    repeat: Infinity,
-    ease: "easeOut",
-  }}
-  className="absolute z-20 font-serif 
+            return (
+              <motion.span
+                key={i}
+                initial={{
+                  opacity: 0,
+                  scale: 0.2,
+                  x: radiusX,
+                  y: radiusY,
+                }}
+                animate={{
+                  opacity: [0, 0, 1, 1, 0], // 👈 stays invisible first, then appears
+                  scale: [0.2, 0.4, 1, 1.4, 1.6],
+                  x: [radiusX, radiusX * 1.5, radiusX * 2.5, radiusX * 3.2],
+                  y: [radiusY, radiusY * 1.5, radiusY * 2.5, radiusY * 3.2],
+                }}
+                transition={{
+                  duration: 6,
+                  delay: i * 1,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+                className="absolute z-20 font-serif 
              text-[#2A4A3A]/80 tracking-wide 
              pointer-events-none
              drop-shadow-[0_0_12px_rgba(21,128,61,0.25)]"
-  style={{
-    left: "50%",
-    top: "50%",
-    transform: "translate(-50%, -50%)",
-    fontSize: "clamp(12px, 1.2vw, 22px)",
-  }}
->
-  {word}
-</motion.span>
-  );
-})}
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  fontSize: "clamp(12px, 1.2vw, 22px)",
+                }}
+              >
+                {word}
+              </motion.span>
+            );
+          })}
 
           {/* 🌫 EDGE GLOW */}
           <div className="absolute w-[300px] h-[300px] md:w-[380px] md:h-[380px] 
                           rounded-full pointer-events-none
                           shadow-[0_0_120px_40px_rgba(143,174,151,0.15)]" />
 
-                          
+
 
           {/* 🔵 LEFT FLOAT */}
           {/* <motion.div
@@ -207,7 +209,7 @@ function Hero() {
               </div>
             </div>
           </motion.div> */}
-   
+
 
           {/* 🌿 FLOATING PARTICLES */}
           <motion.div

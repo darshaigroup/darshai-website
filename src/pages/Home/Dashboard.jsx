@@ -3,7 +3,7 @@ import { fadeUp, staggerContainer } from "../../utils/animations";
 import { Activity, Droplet, Sun, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
- function Dashboard() {
+function Dashboard() {
   const [progress, setProgress] = useState(0);
 
   // simulate real-time progress animation

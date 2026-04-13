@@ -109,7 +109,7 @@ const services = [
         title: "Longevity Summits",
         desc: "Expert panels on the future of Precision Ecology",
       },
-        {
+      {
         title: "Tech-Hackathons",
         desc: "Events where participants build innovative solutions for longevity challenges",
       },
@@ -146,66 +146,73 @@ function Services() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="services" className="bg-[#F5F1E8] py-16 px-6">
+    <motion.section
+      id="services"
+      initial={{ opacity: 0, y: 80 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-[#fdfdfd] py-16 px-6"
+    >
       <div className="max-w-5xl mx-auto">
 
-        {/* 🔹 Heading */}
-        <div className="text-center mb-14">
+        {/* Heading */}
+        <div className="text-center mb-14 mt-10">
           <p className="text-xs tracking-[0.3em] text-[#7A8F84] uppercase mb-2">
             SERVICES
           </p>
- {/* Divider */}
-        <div className="w-16 h-[1px] bg-[#C9B37E] mx-auto mb-10"></div>
-          <h2 className="font-heading text-4xl md:text-5xl text-[#2A4A3A] mb-4">
+
+          <div className="w-16 h-[1px]  bg-[#C9B37E] mx-auto mb-10"></div>
+
+          <motion.h2
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="font-heading text-4xl md:text-5xl text-[#2A4A3A] mb-4"
+          >
             The Six Gears of Precision Wellness
-          </h2>
+          </motion.h2>
 
           <p className="text-[#7A8F84] max-w-2xl mx-auto">
-            From elite personalized protocols to corporate ecosystem transformation—
-            each service tier designed for specific wellness aspirations.
+            Personalized protocols to corporate transformation —
+            designed for modern longevity.
           </p>
         </div>
 
-        {/* 🔹 Cards */}
+        {/* Cards */}
         <div className="space-y-6">
-
           {services.map((service, index) => {
             const isOpen = active === index;
 
             return (
-             <motion.div
-  layout
-  transition={{
-    layout: {
-      duration: 0.6,
-      type: "spring",
-      stiffness: 120,
-      damping: 18,
-    },
-  }}
-  className={`rounded-3xl border transition-all duration-500 ${
-    isOpen
-      ? "bg-[#F1ECE2] border-[#2A4A3A]/40 shadow-lg scale-[1.01]"
-      : "bg-[#F9F6F0] border-[#E5DED0]"
-  }`}
->
+              <motion.div
+                key={index}
+                layout
+                transition={{
+                  layout: {
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 18,
+                  },
+                }}
+                className={`rounded-3xl border transition-all duration-500 hover:scale-[1.015] ${isOpen
+                    ? "bg-[#F1ECE2] border-[#2A4A3A]/40 shadow-lg"
+                    : "bg-[#F9F6F0] border-[#E5DED0]"
+                  }`}
+              >
 
-                {/* 🔹 Header */}
+                {/* Header */}
                 <div
                   onClick={() => setActive(index)}
                   className="flex items-center justify-between p-6 cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
-
-                    {/* Icon Circle */}
-                    <div className="w-12 h-12 rounded-full bg-[#15803d] text-white flex items-center justify-center text-xl">
-                      {service.icon} 
+                    <div className="w-12 h-12 rounded-full bg-[#15803d] text-white flex items-center justify-center">
+                      {service.icon}
                     </div>
 
-                    {/* Text */}
                     <div>
-                     
-
                       <h3 className="text-xl md:text-2xl font-heading text-[#2A4A3A]">
                         {service.title}
                       </h3>
@@ -213,37 +220,34 @@ function Services() {
                       <p className="text-sm text-[#7A8F84]">
                         {service.subtitle}
                       </p>
-
-                      <p className="text-xs text-[#A3B1A6] mt-1">
-                        TARGET: {service.target}
-                      </p>
                     </div>
                   </div>
 
-                  {/* Arrow */}
                   <motion.span
                     animate={{ rotate: isOpen ? 180 : 0 }}
-                    className="text-[#2A4A3A]"
+                    transition={{ duration: 0.4 }}
                   >
                     ⌄
                   </motion.span>
                 </div>
 
-                {/* 🔹 Content */}
+                {/* Content */}
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.4 }}
-                      className="px-6 pb-6"
+                      transition={{ duration: 0.5 }}
+                      className="px-6 pb-6 overflow-hidden"
                     >
                       <div className="grid md:grid-cols-2 gap-4 mt-4">
 
                         {service.items.map((item, i) => (
-                          <div
+                          <motion.div
                             key={i}
+                            whileHover={{ scale: 1.03 }}
+                            transition={{ duration: 0.3 }}
                             className="bg-[#F5F1E8] border border-[#E5DED0] rounded-xl p-4"
                           >
                             <p className="text-[#2A4A3A] font-medium text-sm">
@@ -253,7 +257,7 @@ function Services() {
                             <p className="text-[#7A8F84] text-xs mt-1">
                               {item.desc}
                             </p>
-                          </div>
+                          </motion.div>
                         ))}
 
                       </div>
@@ -266,7 +270,7 @@ function Services() {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

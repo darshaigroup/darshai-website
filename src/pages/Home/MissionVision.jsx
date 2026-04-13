@@ -25,41 +25,41 @@ function MissionVision() {
         <div className="grid md:grid-cols-2 gap-10">
           {data.map((item, index) => (
             <motion.div
-  key={index}
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ delay: index * 0.2 }}
-  className="group p-10 rounded-2xl 
+              key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              className="group p-10 rounded-2xl 
              bg-[#EFE8DC] 
              hover:bg-[#15803d]
              transition-all duration-500 
              relative overflow-hidden"
->
+            >
 
-  {/* 🌿 ICON (VISIBLE ALWAYS - FADED) */}
-  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <div className="text-[#2A4A3A]/10 group-hover:text-[#C9A24A] 
+              {/* 🌿 ICON (VISIBLE ALWAYS - FADED) */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="text-[#2A4A3A]/10 group-hover:text-[#C9A24A] 
                     opacity-100 group-hover:opacity-100 
                     scale-100 group-hover:scale-110 
                     transition-all duration-500">
-      {item.icon}
-    </div>
-  </div>
+                  {item.icon}
+                </div>
+              </div>
 
-  {/* 🔹 CONTENT */}
-  <div className="relative z-10 transition-all duration-300">
+              {/* 🔹 CONTENT */}
+              <div className="relative z-10 transition-all duration-300">
 
-    <h3 className="text-2xl font-serif text-[#2A4A3A] group-hover:text-white mb-4 transition">
-      {item.title}
-    </h3>
+                <h3 className="text-2xl font-serif text-[#2A4A3A] group-hover:text-white mb-4 transition">
+                  {item.title}
+                </h3>
 
-    <p className="text-[#6B7F73] group-hover:text-white leading-relaxed transition">
-      {item.text}
-    </p>
+                <p className="text-[#6B7F73] group-hover:text-white leading-relaxed transition">
+                  {item.text}
+                </p>
 
-  </div>
+              </div>
 
-</motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

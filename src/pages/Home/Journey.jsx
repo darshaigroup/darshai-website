@@ -9,7 +9,7 @@ const roadmap = [
     date: "March 2026",
     desc: "Deep research into Ayurvedic protocols and biomarker science. Building foundational AI models.",
     icon: <Lightbulb />,
-    active: true, 
+    active: true,
     color: "bg-[#15803d]",
   },
   {
@@ -19,7 +19,7 @@ const roadmap = [
     desc: "Curated group of 25 participants for beta testing. Real-world validation of protocols.",
     icon: <Users />,
     active: false,
-     color: "bg-[#15803d]",
+    color: "bg-[#15803d]",
   },
   {
     phase: "PHASE 3",
@@ -28,11 +28,11 @@ const roadmap = [
     desc: "Enterprise wellness programs. Scaling to organizations committed to employee wellbeing.",
     icon: <Building2 />,
     active: false,
-     color: "bg-[#15803d]",
+    color: "bg-[#15803d]",
   },
 ];
 
- function Journey() {
+function Journey() {
   return (
     <section className="bg-[#fffdfd] py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -88,11 +88,10 @@ const roadmap = [
 
                 {/* Card */}
                 <div
-                  className={`flex-1 rounded-2xl p-8 border ${
-                    item.active
+                  className={`flex-1 rounded-2xl p-8 border ${item.active
                       ? "border-[#C9A75B] bg-[#EFE8D9]"
                       : "border-[#E0D8C5] bg-[#F1ECE2]"
-                  }`}
+                    }`}
                 >
                   {/* Top Row */}
                   <div className="flex justify-between items-center mb-3">
