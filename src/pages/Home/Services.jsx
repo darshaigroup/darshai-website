@@ -14,11 +14,11 @@ const services = [
         desc: "7-day bespoke interventions at exclusive partner Geo-Wellness centers",
       },
       {
-        title: "Biological Sovereignty Dashboard",
-        desc: "24/7 access to real-time vitality score and biomarker tracking (HRV, Sleep, Cortisol)",
+        title: "Biological Sovereignty Dashboard + Bio-Hacking Kit",
+        desc: " access to real-time longevity score and biomarker tracking (HRV, Sleep, Cortisol)",
       },
       {
-        title: "Concierge Bio-Butler Service",
+        title: "Personalized Luxury Geo-Wellness Experience",
         desc: "Dedicated clinical and operational support for seamless protocol execution",
       },
       {
@@ -39,7 +39,7 @@ const services = [
         desc: "A specialized 5-day intensive program to reverse burnout and decision fatigue",
       },
       {
-        title: "Corporate Vitality Audits",
+        title: "Corporate Longevity Audits",
         desc: "Group biological reporting for leadership teams to optimize cognitive performance",
       },
       {
@@ -57,11 +57,11 @@ const services = [
     items: [
       {
         title: "Digital Maintenance Plans",
-        desc: "Post-retreat diet and lifestyle guidance delivered through the DARSHAI App",
+        desc: "Post-retreat diet and lifestyle guidance",
       },
       {
         title: "Vaidhya Video Library",
-        desc: "7–10 minute expert-led modules on Ayurvedic science and longevity habits",
+        desc: "7–10 minute expert-led personalised modules on Ayurvedic science and longevity habits",
       },
       {
         title: "AI-Driven Real-Time Guidance",
@@ -103,11 +103,15 @@ const services = [
       },
       {
         title: "Pop-Up Geo-Wellness Experiences",
-        desc: "Limited wellness activations in major tech hubs",
+        desc: "Limited wellness activity in major Tech hubs",
       },
       {
         title: "Longevity Summits",
         desc: "Expert panels on the future of Precision Ecology",
+      },
+        {
+        title: "Tech-Hackathons",
+        desc: "Events where participants build innovative solutions for longevity challenges",
       },
     ],
   },
@@ -116,11 +120,11 @@ const services = [
     title: "Precision Ecology & Corporate Auditing",
     icon: <Leaf />,
     subtitle: "Environmental Optimization for Organizations",
-    target: "Corporations, Tech Parks & High-Performance Workspaces",
+    target: "Corporate companies & Employees, Tech Parks, Co-working Spaces",
     items: [
       {
-        title: "Circadian Office Auditing",
-        desc: "Lighting, air quality & acoustic optimization to reduce stress",
+        title: "Periodic Office Auditing",
+        desc: "Light, air quality & acoustic optimization to reduce stress",
       },
       {
         title: "Biophilic Integration",
@@ -131,7 +135,7 @@ const services = [
         desc: "Redesigning food environments with Ayurvedic performance nutrition",
       },
       {
-        title: "Occupational Vitality Certification",
+        title: "Occupational Longevity Certification",
         desc: "DARSHAI certification for biologically optimized workplaces",
       },
     ],
@@ -169,15 +173,22 @@ function Services() {
             const isOpen = active === index;
 
             return (
-              <motion.div
-                key={index}
-                layout
-                className={`rounded-3xl border transition-all duration-500 ${
-                  isOpen
-                    ? "bg-[#F1ECE2] border-[#2A4A3A]/40 shadow-md"
-                    : "bg-[#F9F6F0] border-[#E5DED0]"
-                }`}
-              >
+             <motion.div
+  layout
+  transition={{
+    layout: {
+      duration: 0.6,
+      type: "spring",
+      stiffness: 120,
+      damping: 18,
+    },
+  }}
+  className={`rounded-3xl border transition-all duration-500 ${
+    isOpen
+      ? "bg-[#F1ECE2] border-[#2A4A3A]/40 shadow-lg scale-[1.01]"
+      : "bg-[#F9F6F0] border-[#E5DED0]"
+  }`}
+>
 
                 {/* 🔹 Header */}
                 <div
@@ -187,7 +198,7 @@ function Services() {
                   <div className="flex items-center gap-4">
 
                     {/* Icon Circle */}
-                    <div className="w-12 h-12 rounded-full bg-[#C9A24A] text-white flex items-center justify-center text-xl">
+                    <div className="w-12 h-12 rounded-full bg-[#15803d] text-white flex items-center justify-center text-xl">
                       {service.icon} 
                     </div>
 

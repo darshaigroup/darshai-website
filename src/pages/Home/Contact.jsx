@@ -12,13 +12,16 @@ const cards = [
     title: "LET'S TALK",
     icon: FaPhoneAlt,
     value: "+91 7349171511",
+     link: "tel:+917349171511",
   },
   {
     type: "address",
     title: "VISIT OUR OFFICE",
     icon: FaMapMarkerAlt,
     value:
-      "3rd Floor, Plama Center, Bejai-Kapikad Rd, Mangaluru, Karnataka",
+      "K-tech Innovation Hub (CIF), 3rd Floor, Plama Center, Bejai-Kapikad Rd, Mangaluru, Karnataka",
+       link: "https://maps.app.goo.gl/pLnRnbEZzQfk9iXN9",
+
   },
   {
     type: "email",
@@ -103,18 +106,20 @@ function Contact() {
             </h3>
 
             {/* VALUE */}
-            <p className="relative z-10 text-sm text-[#5F756B] leading-relaxed">
-              {card.type === "email" ? (
-                <a
-                  href={card.link}
-                  className="hover:text-[#15803d] transition"
-                >
-                  {card.value}
-                </a>
-              ) : (
-                card.value
-              )}
-            </p>
+          <p className="relative z-10 text-sm text-[#5F756B] leading-relaxed">
+  {(card.type === "email" || card.type === "address" || card.type === "phone") ? (
+    <a
+      href={card.link}
+      target={card.type === "address" ? "_blank" : "_self"}
+      rel="noopener noreferrer"
+      className="hover:text-[#15803d] transition underline-offset-4 hover:underline"
+    >
+      {card.value}
+    </a>
+  ) : (
+    card.value
+  )}
+</p>
           </motion.div>
         ))}
       </div>

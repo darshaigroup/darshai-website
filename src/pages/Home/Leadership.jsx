@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "../../utils/animations";
 import ceo from "../../assets/images/ceo.png";
+import MissionVision from "./MissionVision";
 
 function Leadership() {
   return (
@@ -33,24 +34,12 @@ function Leadership() {
           whileInView="visible"
           className="font-serif text-4xl md:text-5xl text-[#2A4A3A] mb-16"
         >
-          Guided by Vision
+          Mission and Vision
         </motion.h2>
 
-        {/* 💬 QUOTE CARD (GLASS EFFECT) */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          className="backdrop-blur-md bg-white/70 border border-white/40 
-                     rounded-3xl p-10 mb-24 shadow-xl max-w-4xl mx-auto text-left"
-        >
-          <p className="text-xl text-[#2A4A3A] leading-relaxed font-normal">
-            “True wellness isn't found in a pill or a protocol—it's discovered
-            through understanding the unique ecology of your own body,
-            informed by both ancestral wisdom and cutting-edge science.”
-          </p>
-        </motion.div>
+      
       </div>
+      <MissionVision />
 
       {/* 👤 CEO SECTION */}
       <div className="relative z-10 flex flex-col items-center text-center group">

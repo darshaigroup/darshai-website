@@ -21,60 +21,46 @@ function MissionVision() {
   return (
     <section className="py-24 bg-[#F5F1E8] px-6">
       <div className="max-w-7xl mx-auto text-center">
-
-        {/* 🔹 SECTION TITLE */}
-        <p className="text-xs tracking-[0.3em] text-[#8FAE97] mb-3">
-          OUR FOUNDATION
-        </p>
-
-        <h2 className="text-4xl md:text-5xl font-serif text-[#2A4A3A] mb-16">
-          Mission & Vision
-        </h2>
-
         {/* 🔹 CARDS */}
         <div className="grid md:grid-cols-2 gap-10">
-
           {data.map((item, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="relative group p-10 rounded-2xl 
-                         bg-[#EFE8DC] 
-                         shadow-sm 
-                         overflow-hidden"
-            >
+  key={index}
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: index * 0.2 }}
+  className="group p-10 rounded-2xl 
+             bg-[#EFE8DC] 
+             hover:bg-[#15803d]
+             transition-all duration-500 
+             relative overflow-hidden"
+>
 
-              {/* 🌿 HOVER OVERLAY */}
-              <div className="absolute inset-0 
-                              bg-[#2A4A3A]/90 
-                              flex items-center justify-center 
-                              opacity-0 group-hover:opacity-50 
-                              transition-all duration-500">
+  {/* 🌿 ICON (VISIBLE ALWAYS - FADED) */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="text-[#2A4A3A]/10 group-hover:text-[#C9A24A] 
+                    opacity-100 group-hover:opacity-100 
+                    scale-100 group-hover:scale-110 
+                    transition-all duration-500">
+      {item.icon}
+    </div>
+  </div>
 
-                {/* ICON CENTER */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileHover={{ scale: 1 }}
-                  className="text-green-900"
-                >
-                  {item.icon}
-                </motion.div>
-              </div>
+  {/* 🔹 CONTENT */}
+  <div className="relative z-10 transition-all duration-300">
 
-              {/* 🔹 CONTENT */}
-              <h3 className="text-2xl font-serif text-[#2A4A3A] mb-4">
-                {item.title}
-              </h3>
+    <h3 className="text-2xl font-serif text-[#2A4A3A] group-hover:text-white mb-4 transition">
+      {item.title}
+    </h3>
 
-              <p className="text-[#6B7F73] leading-relaxed">
-                {item.text}
-              </p>  
+    <p className="text-[#6B7F73] group-hover:text-white leading-relaxed transition">
+      {item.text}
+    </p>
 
-            </motion.div>
+  </div>
+
+</motion.div>
           ))}
-
         </div>
       </div>
     </section>

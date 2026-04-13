@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaFacebookF, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -92,6 +92,14 @@ const Footer = () => {
               <FaFacebookF />
             </motion.a>
 
+            {/* Twitter */}
+            <motion.a
+              whileHover={{ scale: 1.2, y: -3 }}
+              href="https://twitter.com/DarshaiOffcial"
+              className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaTwitter />
+            </motion.a>
           </div>
         </motion.div>
       </div>
