@@ -27,7 +27,7 @@ function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex items-center px-6 bg-[#F5F1E8]">
-      <div className="grid md:grid-cols-2 mt-10 gap-30 max-w-7xl mx-auto items-center">
+      <div className="grid md:grid-cols-2 mt-20 gap-30 max-w-7xl mx-auto items-center">
 
         {/* 🔹 LEFT CONTENT */}
         <div>
@@ -40,7 +40,7 @@ function Hero() {
             Reclaim biological sovereignty through Ayurveda and biomarker science.
           </p>
 
-          <div className="mt-6 mb-9 flex gap-4">
+          <div className="mt-6 mb-9  flex gap-4">
             <button
               onClick={scrollToContact}
               className="bg-[#15803d] text-white px-6 py-3 rounded-full 
@@ -66,7 +66,7 @@ function Hero() {
         <motion.div className="relative flex items-center justify-center">
 
           {/* ✨ SOFT GLOW */}
-          <div className="absolute w-[420px] h-[420px] md:w-[520px] md:h-[520px] 
+          <div className="absolute w-[420px] h-[420px] md:w-[520px] md:h-[520px]  
                           rounded-full bg-[#8FAE97]/20 blur-[120px] opacity-50" />
 
           {/* 🌿 SECOND GLOW */}
@@ -93,7 +93,7 @@ function Hero() {
           <motion.div
             animate={{ scale: [1, 1.04, 1] }}
             transition={{ duration: 6, repeat: Infinity }}
-            className="w-[280px] h-[280px] md:w-[360px] md:h-[360px] 
+            className="w-[280px] h-[280px] sm:w-[240px] sm:h-[240px] md:w-[360px] md:h-[360px] 
                        rounded-full overflow-hidden relative z-10 border-2 border-[#0fc552]"
           >
             <div className="absolute inset-0 rounded-full " />

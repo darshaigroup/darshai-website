@@ -12,8 +12,9 @@ function Strip() {
   const [paused, setPaused] = useState(false);
 
   return (
+   
     <div
-      className="overflow-hidden border-y bg-[#15803d] py-5"
+      className="overflow-hidden border-y mt-16 sm:mt-0 sm:h-[100px] bg-[#15803d] py-5"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
