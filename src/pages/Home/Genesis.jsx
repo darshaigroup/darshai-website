@@ -9,7 +9,7 @@ function Genesis() {
       id="about"
       className="relative py-40 px-6 text-center overflow-hidden bg-[#F5F1E8]"
     >
-      
+
 
       {/* ✨ SOFT GRADIENT DEPTH */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#F5F1E8] via-[#F5F1E8]/90 to-[#e2d7bd]" />

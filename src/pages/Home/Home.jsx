@@ -10,7 +10,7 @@ import Services from "./Services";
 import Contact from "./Contact";
 import MissionVision from "./MissionVision";
 
- function Home() {
+function Home() {
   return (
     <>
       <Hero />

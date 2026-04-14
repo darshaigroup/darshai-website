@@ -37,7 +37,7 @@ function Leadership() {
           Mission and Vision
         </motion.h2>
 
-      
+
       </div>
       <MissionVision />
 
