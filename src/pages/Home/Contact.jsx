@@ -27,8 +27,8 @@ const cards = [
     type: "email",
     title: "E-MAIL US",
     icon: FaEnvelope,
-    value: "info@darshai.com",
-    link: "mailto:info@darshai.com",
+    value: "info@darshaigroup.com",
+    link: "mailto:info@darshaigroup.com",
   },
 ];
 
